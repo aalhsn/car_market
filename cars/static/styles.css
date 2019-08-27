@@ -1,0 +1,10 @@
+.cardz {
+
+	transition: 1s all;
+}
+
+.cardz:hover {
+
+	transform: translateY(5px);
+	box-shadow: 0px 4px 10px #262626;
+}

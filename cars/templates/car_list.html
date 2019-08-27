@@ -1,19 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Car List</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}
+CarMarket 2.0
+{% endblock title %}
+
+{% block content %}
+<br>
+<a href="{% url 'car-create' %}"><button type="button" class="btn btn-primary btn-lg btn-block mb-3">Add New Car</button></a>
+<div class ="row">
 	{% for car in cars %}
-		<a href="{{car.get_absolute_url}}">
-			<h1>
-				{{car.make}} - {{car.model}}
-				<small>
-					{{car.year}}
-				</small>
-			</h1>
-		</a>
-		<hr>
+	<div class="col-12 col-md-6 col-xl-6">
+		<div class="card bg-dark text-white mb-3">
+			<div class="card-body cardz">
+					<h1>
+						{{car.make}} - {{car.model}}
+						<small>
+							{{car.year}}
+						</small>
+					</h1>
+					<img class="card-img" src="{{car.car_img.url}}" width="auto" height="300">
+					<a class= "text-white" href="{{car.get_absolute_url}}"><button class = "btn btn-primary btn-sm mt-4">More Info.</button></a>
+			</div>
+		</div>
+	</div>
 	{% endfor %}
-</body>
-</html>
+</div>
+{% endblock content %}
