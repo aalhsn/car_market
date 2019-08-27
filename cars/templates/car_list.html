@@ -18,7 +18,9 @@ CarMarket 2.0
 							{{car.year}}
 						</small>
 					</h1>
-					<img class="card-img" src="{{car.car_img.url}}" width="auto" height="300">
+					{% if car.car_img %}
+						<img class="card-img" src="{{car.car_img.url}}" width="auto" height="300">
+					{% endif %}
 					<a class= "text-white" href="{{car.get_absolute_url}}"><button class = "btn btn-primary btn-sm mt-4">More Info.</button></a>
 			</div>
 		</div>

@@ -58,7 +58,7 @@ def car_update(request, car_id):
 
 def car_delete(request, car_id):
 	Car.objects.get(id=car_id).delete()
-	messages.error(request, 'Car was deleted.')
+	messages.warning(request, 'Car was deleted.')
 	return redirect("car-list")
 
 	
